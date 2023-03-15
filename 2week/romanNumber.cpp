@@ -1,5 +1,6 @@
 #include <iostream>
 #include <map>
+#include <conio.h>
 
 using namespace std;
 
@@ -22,7 +23,7 @@ int toNumber(string roman) { //로마자 문자열을 인수로 받아 해당하는 정수를 반환
 			num -= curr; //curr 빼주기
 		}
 		else {
-			num += curr; //num에 더해주기
+			num += curr; //curr 더해주기
 		}
 		prev = curr; //prev가 curr이 될 때까지
 	}
@@ -30,14 +31,21 @@ int toNumber(string roman) { //로마자 문자열을 인수로 받아 해당하는 정수를 반환
 }
 
 int main() {
-	string roman; //roman 을 string으로 정의
+	string roman; //roman을 string으로 지정
+	char input; //input을 char형으로 지정
+	
+	while (true) {
+		cout << "로마 숫자를 입력하세요.\n로마 숫자 이외의 것을 입력하면 0이 출력됩니다.\n"; //글 출력
+		input = _getch(); //키 입력 받기
 
-	cout << "로마 숫자를 입력하세요.\n"; //글 출력
-	cin >> roman; //로마 숫자를 사용자가 입력하도록
-
-	int num = toNumber(roman); //숫자 계산(toNumber 호출)
-
-	cout << num << endl; //num 출력
-
+		if (input == 27) { //27은 esc의 아스키 코드
+			break; //누르면 실행 끝
+		}
+		else {
+			cin >> roman; //로마자 입력
+			int num = toNumber(roman); //숫자 계산(toNumber 호출)
+			cout << num << endl; //숫자 출력
+		}
+	}
 	return 0; //0으로 반환
 }
