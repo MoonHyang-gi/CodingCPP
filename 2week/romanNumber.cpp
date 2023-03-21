@@ -35,16 +35,21 @@ int main() {
 	char input; //input을 char형으로 지정
 	
 	while (true) {
-		cout << "로마 숫자를 입력하세요.\n로마 숫자 이외의 것을 입력하면 0이 출력됩니다.\n"; //글 출력
-		input = _getch(); //키 입력 받기
+		cout << "로마 숫자를 입력하세요.\n"; //글 출력
+		input = getchar(); //키 입력 받기
 
 		if (input == 27) { //27은 esc의 아스키 코드
 			break; //누르면 실행 끝
 		}
 		else {
 			cin >> roman; //로마자 입력
-			int num = toNumber(roman); //숫자 계산(toNumber 호출)
-			cout << num << endl; //숫자 출력
+			if (!toNumber(roman)) { //로마자가 아니면
+				cout << "잘못된 정보를 입력하였습니다.";
+			}
+			else {
+				int num = toNumber(roman); //숫자 계산(toNumber 호출)
+				cout << num << endl; //숫자 출력
+			}
 		}
 	}
 	return 0; //0으로 반환
