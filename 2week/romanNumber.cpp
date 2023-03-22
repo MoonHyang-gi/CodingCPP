@@ -31,11 +31,11 @@ int toNumber(string roman) { //로마자 문자열을 인수로 받아 해당하는 정수를 반환
 }
 
 int main() {
-	string roman; //roman을 string으로 지정
+	string roman = ""; //roman을 string으로 지정
 	char input; //input을 char형으로 지정
 	
 	while (true) {
-		cout << "로마 숫자를 입력하세요.\n"; //글 출력
+		cout << "로마 숫자를 입력하세요.(종료하려면 ESC)\n"; //글 출력
 		input = getchar(); //키 입력 받기
 
 		if (input == 27) { //27은 esc의 아스키 코드
@@ -43,8 +43,9 @@ int main() {
 		}
 		else {
 			cin >> roman; //로마자 입력
+
 			if (!toNumber(roman)) { //로마자가 아니면
-				cout << "잘못된 정보를 입력하였습니다.";
+				cout << "잘못된 정보를 입력하였습니다.\n";
 			}
 			else {
 				int num = toNumber(roman); //숫자 계산(toNumber 호출)
@@ -52,6 +53,7 @@ int main() {
 			}
 		}
 	}
+
 	return 0; //0으로 반환
 }
 
