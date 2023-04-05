@@ -9,7 +9,7 @@ using namespace std;
 //2. 맵에 장애물 배치 o
 //3. 플레이어블 캐릭터 생성 o
 //4. 캐릭터는 방향키로 이동 o ?
-//5. 적 생성 ?
+//5. 적 생성 o
 //6. 적은 최단 경로 dfs / bfs 로 플레이어를 따라옴 ?
 
 // 골인 지점 있고 최단 경로 역탐색
@@ -148,15 +148,17 @@ int main() {
                 // X가 O를 찾는 BFS 알고리즘 호출
                 memset(visited, false, sizeof(visited)); //visited 배열 false로 초기화
             }
+            else break;
 
             system("cls");
 
             for (int i = 0; i < ROW; i++) {
                 for (int j = 0; j < COL; j++) {
-                    if (i == y && j == x) { //O의 위치일 때
+                    if (i == y && j == x) { 
                         cout << 'O';
                     }
                     else if (i == y2 && j == x2) {
+                        
                         cout << 'X';
                     }
                     else {
