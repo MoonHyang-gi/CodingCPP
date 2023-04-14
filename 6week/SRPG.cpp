@@ -79,7 +79,7 @@ public:
                 else if (p->visited[i][j]) { //방문한 곳이라면
                     cout << "★";
                 }
-                else {
+                else { //이동할 수 있는 곳이라면
                     cout << "□";
                 }
             }
