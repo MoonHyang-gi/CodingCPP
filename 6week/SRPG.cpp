@@ -2,6 +2,7 @@
 #include <queue>
 #include <vector>
 #include <cstring>
+#include <conio.h>
 
 using namespace std;
 
