@@ -72,10 +72,6 @@ int main()
 
     printf("점수를 입력하세요: ");
     myScanf(file, "%d", &myStruct.num);
-    if (myStruct.num != "%d") {
-        printf("Error 점수가 아닙니다.\n");
-        return -1;
-    }
 
     printf("성적을 입력하세요: ");
     myScanf(file, " %c", &myStruct.ch);
