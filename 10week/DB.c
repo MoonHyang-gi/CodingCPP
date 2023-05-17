@@ -64,8 +64,9 @@ int main()
         printf("파일을 열 수 없습니다.");
         return 1;
     }
-
+    
     MyStruct myStruct; //구조체 인스턴스 생성
+    const char* format = "%d %c %s";
 
     //동적 메모리 할당
     myStruct.num = (int*)malloc(sizeof(int));
@@ -81,7 +82,11 @@ int main()
     printf("성적을 입력하세요: ");
     myScanf(file, " %c", myStruct.ch);
 
-    printf("내 이름은 %s이고 이번학기 점수는 %d점이고 성적은 %c를 받았습니다.", myStruct.str, *myStruct.num, *myStruct.ch);
+    fprintf(file, "\n내 이름은 %s이고 이번학기 점수는 %d점이고 성적은 %c를 받았습니다.", myStruct.str, *myStruct.num, *myStruct.ch);
+    
+    /*const char* cc = "%d %c %s";
+    int count = (cc, 'd');
+    printf("int(%d개)", count);*/
 
     //동적 메모리 해제
     free(myStruct.num);
