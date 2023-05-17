@@ -4,9 +4,9 @@
 #include <stdlib.h>
 
 typedef struct { //구조체 생성
-    int num;
-    char ch;
-    char str[256];
+    int* num;
+    char* ch;
+    char* str;
 } MyStruct;
 
              // 파일 입력 읽기 , 입력 값 읽기 , 가변 인자
@@ -67,16 +67,26 @@ int main()
 
     MyStruct myStruct; //구조체 인스턴스 생성
 
+    //동적 메모리 할당
+    myStruct.num = (int*)malloc(sizeof(int));
+    myStruct.ch = (char*)malloc(sizeof(char));
+    myStruct.str = (char*)malloc(sizeof(char) * 256);
+
     printf("이름을 입력하세요: ");
     myScanf(file, "%s", myStruct.str);
 
     printf("점수를 입력하세요: ");
-    myScanf(file, "%d", &myStruct.num);
+    myScanf(file, "%d", myStruct.num);
 
     printf("성적을 입력하세요: ");
-    myScanf(file, " %c", &myStruct.ch);
+    myScanf(file, " %c", myStruct.ch);
 
-    printf("내 이름은 %s이고 이번학기 점수는 %d점이고 성적은 %c를 받았습니다.", myStruct.str, myStruct.num, myStruct.ch);
+    printf("내 이름은 %s이고 이번학기 점수는 %d점이고 성적은 %c를 받았습니다.", myStruct.str, *myStruct.num, *myStruct.ch);
+
+    //동적 메모리 해제
+    free(myStruct.num);
+    free(myStruct.ch);
+    free(myStruct.str);
 
     fclose(file); //file close
 
