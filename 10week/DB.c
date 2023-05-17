@@ -66,7 +66,7 @@ int main()
     }
     
     MyStruct myStruct; //구조체 인스턴스 생성
-    const char* format = "%d %c %s";
+    //int count = 0;
 
     //동적 메모리 할당
     myStruct.num = (int*)malloc(sizeof(int));
@@ -75,6 +75,8 @@ int main()
 
     printf("이름을 입력하세요: ");
     myScanf(file, "%s", myStruct.str);
+    /*count = myStruct.str, 's';
+    printf("%d\n", count);*/
 
     printf("점수를 입력하세요: ");
     myScanf(file, "%d", myStruct.num);
