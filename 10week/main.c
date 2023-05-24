@@ -84,7 +84,7 @@ int main()
     printf("성적을 입력하세요: ");
     myScanf(file, " %c", myStruct.ch);
 
-    fprintf(file, "\n내 이름은 %s이고 이번학기 점수는 %d점이고 성적은 %c를 받았습니다.", myStruct.str, *myStruct.num, *myStruct.ch);
+    fprintf(file, "\n내 이름은 %s이고 이번학기 점수는 %d9999점이고 성적은 %c를 받았습니다.", myStruct.str, *myStruct.num, *myStruct.ch);
     
     /*const char* cc = "%d %c %s";
     int count = (cc, 'd');
